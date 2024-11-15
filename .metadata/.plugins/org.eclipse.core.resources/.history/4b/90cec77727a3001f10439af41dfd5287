@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <stdio.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -56,6 +56,30 @@ static void MX_USART2_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+/*int __io_putchar(int ch)	//lowest output function, 문자 ?��?�� ?�� 받음 그것?�� uart�???? 출력
+{
+  HAL_UART_Transmit(&huart2, &ch, 1, 10);
+  //HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout)
+  //					      ?��?�� usart?���????,      문자?��?�� ?��?�� 버퍼?�� ?��?��?��?���????, ?��료형 size, ?��?�� ?���????-보통 10ms?�� ?��걸림 9600 ~= 1k
+  // 1ms sec but set roughly 10ms
+
+  return ch;
+}
+
+void StandBy()
+{
+  while (HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin));
+}
+
+ void ProgramStart(char * str)
+ {
+     printf("\033[2j\033[0;0H");
+     HAL_Delay(500);
+     printf("Program Start - %s\r\n", *str);HAL_Delay(500);
+     printf("Press Blue-button(B1) to Start...\r\n");HAL_Delay(500);
+     StandBy();
+
+ }*/
 
 /* USER CODE END 0 */
 
@@ -66,7 +90,9 @@ static void MX_USART2_UART_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+  int count = 0;
 
+  ProgramStart("UART");
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -90,25 +116,19 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
-
-/*  HAL_GPIO_WritePIN(GPIOA, GPIO_PIN_5, 1);*/
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	while (1) {
+  while (1)
+  {
+    /* USER CODE END WHILE */
 
-		/* USER CODE END WHILE */
-
-		/* USER CODE BEGIN 3 */
-
-		if(HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin) == 0)
-		{
-			HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 0);
-		}
-		else HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 1);
-	}
+    /* USER CODE BEGIN 3 */
+      double a = count++ / 3.14;
+      printf("UART Test....%6.2f \r\n", a);
+      HAL_Delay(500);
+  }
   /* USER CODE END 3 */
 }
 
@@ -224,12 +244,20 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
 
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */
+void
+HAL_GPIO_EXTI_Callback (uint16_t GPIO_Pin)	//Ext-Interrupt ISR
+{
 
+}
 /* USER CODE END 4 */
 
 /**

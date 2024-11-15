@@ -2041,3 +2041,82 @@ Finished building: default.size.stdout
  
 Finished building: Test003-uart.list
  
+16:57:01 **** Incremental Build of configuration Debug for project Test001 ****
+make -j24 all 
+arm-none-eabi-size  Test001.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8344	     24	   1648	  10016	   2720	Test001.elf
+Finished building: default.size.stdout
+ 
+16:57:01 **** Incremental Build of configuration Debug for project Test002-Timer ****
+make -j24 all 
+arm-none-eabi-size  Test002-Timer.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10840	     24	   1784	  12648	   3168	Test002-Timer.elf
+Finished building: default.size.stdout
+ 
+16:57:05 **** Incremental Build of configuration Debug for project Test003-uart ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:95:3: warning: implicit declaration of function 'ProgramStart' [-Wimplicit-function-declaration]
+   95 |   ProgramStart("UART");
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:129:7: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  129 |       printf("UART Test....%6.2f \r\n", a);
+      |       ^~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:129:7: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  129 |       printf("UART Test....%6.2f \r\n", a);
+      |       ^~~~~~
+../Core/Src/main.c:129:7: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc -o "Test003-uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\user\source\repos\STM32\Test003-uart\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test003-uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Test003-uart.elf
+ 
+arm-none-eabi-size  Test003-uart.elf 
+arm-none-eabi-objdump -h -S Test003-uart.elf  > "Test003-uart.list"
+   text	   data	    bss	    dec	    hex	filename
+  31784	    476	   1980	  34240	   85c0	Test003-uart.elf
+Finished building: default.size.stdout
+ 
+Finished building: Test003-uart.list
+ 
+16:57:16 **** Incremental Build of configuration Debug for project Test003-uart ****
+make -j24 all 
+arm-none-eabi-size  Test003-uart.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31784	    476	   1980	  34240	   85c0	Test003-uart.elf
+Finished building: default.size.stdout
+ 
+16:59:03 **** Incremental Build of configuration Debug for project Test003-uart ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:118:3: warning: implicit declaration of function 'ProgramStart' [-Wimplicit-function-declaration]
+  118 |   ProgramStart("UART");
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:129:7: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  129 |       printf("UART Test....%6.2f \r\n", a);
+      |       ^~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:129:7: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  129 |       printf("UART Test....%6.2f \r\n", a);
+      |       ^~~~~~
+../Core/Src/main.c:129:7: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc -o "Test003-uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\user\source\repos\STM32\Test003-uart\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test003-uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Test003-uart.elf
+ 
+arm-none-eabi-size  Test003-uart.elf 
+arm-none-eabi-objdump -h -S Test003-uart.elf  > "Test003-uart.list"
+   text	   data	    bss	    dec	    hex	filename
+  31784	    476	   1980	  34240	   85c0	Test003-uart.elf
+Finished building: default.size.stdout
+ 
+Finished building: Test003-uart.list
+ 

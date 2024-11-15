@@ -92,7 +92,6 @@ int main(void)
   /* USER CODE BEGIN 1 */
   int count = 0;
 
-  ProgramStart("UART");
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -116,6 +115,7 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
+  ProgramStart("UART");
   /* USER CODE END 2 */
 
   /* Infinite loop */
