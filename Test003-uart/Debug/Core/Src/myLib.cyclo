@@ -1,0 +1,5 @@
+../Core/Src/myLib.c:11:5:__io_putchar	1
+../Core/Src/myLib.c:22:1:StandBy	2
+../Core/Src/myLib.c:28:1:ProgramStart	1
+../Core/Src/myLib.c:38:6:cls	1
+../Core/Src/myLib.c:42:6:Cursor	1

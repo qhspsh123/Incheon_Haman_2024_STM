@@ -133,9 +133,9 @@ int main(void)
 	HAL_GPIO_WritePin (LD2_GPIO_Port, LD2_Pin, 0);
 
       HAL_GPIO_WritePin (LED1_GPIO_Port, LED1_Pin, 0);
-      	  HAL_Delay (1000 - delays);
+      	  HAL_Delay (delays);
       	  HAL_GPIO_WritePin (LED1_GPIO_Port, LED1_Pin, 1);
-      	  HAL_Delay (1000 - delays);
+      	  HAL_Delay (delays);
 
     }
   /* USER CODE END 3 */
@@ -293,13 +293,14 @@ HAL_GPIO_EXTI_Callback (uint16_t GPIO_Pin)	//Ext-Interrupt ISR
       break;
 
     case speed_up_Pin:
-      delays = (delays > 1000) ? 1000 : delays + 100;
+      delays = (delays < 200) ? 200 : delays - 100;
       check = 0;
       break;
 
     case speed_down_Pin:
-      delays = (delays < 200) ? 200 : delays - 100;
+      delays = (delays > 1000) ? 1000 : delays + 100;
       check = 0;
+      break;
 
     default:
       ;
