@@ -6,8 +6,12 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="/*int __io_putchar(int ch)&#x09;//lowest output function, 문자 ?��?�� ?�� 받음 그것?�� uart�??? 출력"/>
+		<item key="selection" value="ADC"/>
 		<list key="findhistory">
+			<item value="HAL_ADC_Start (&amp;hadc1);&#x09;&#x09;      //1 time start "/>
+			<item value="while (1)"/>
+			<item value="ADC"/>
+			<item value="  MX_USART2_UART_Init();"/>
 			<item value="int __io_putchar(int ch)&#x09;//lowest output function, 문자 ?��?�� ?�� 받음 그것?�� uart�??? 출력"/>
 			<item value="/*int __io_putchar(int ch)&#x09;//lowest output function, 문자 ?��?�� ?�� 받음 그것?�� uart�??? 출력"/>
 			<item value="EXT15_10"/>
