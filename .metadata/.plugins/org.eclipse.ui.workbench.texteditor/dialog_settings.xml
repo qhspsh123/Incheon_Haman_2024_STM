@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="ADC"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="to_string"/>
 			<item value="HAL_ADC_Start (&amp;hadc1);&#x09;&#x09;      //1 time start "/>
 			<item value="while (1)"/>
 			<item value="ADC"/>
