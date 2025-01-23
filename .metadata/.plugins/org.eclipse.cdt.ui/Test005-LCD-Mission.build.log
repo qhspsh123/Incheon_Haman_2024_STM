@@ -1,56 +1,10 @@
-16:49:59 **** Incremental Build of configuration Debug for project Test005-LCD-Mission ****
+11:22:44 **** Build of configuration Debug for project Test005-LCD-Mission ****
 make -j24 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:109:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
-  109 |   HAL_ADC_Start_DMA(&hadc1, val, 2);
-      |                             ^~~
-      |                             |
-      |                             short unsigned int *
-In file included from ../Core/Inc/stm32f4xx_hal_conf.h:295,
-                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h:594:72: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'short unsigned int *'
-  594 | HAL_StatusTypeDef HAL_ADC_Start_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);
-      |                                                              ~~~~~~~~~~^~~~~
-../Core/Src/main.c:111:3: warning: implicit declaration of function 'ProgramStart' [-Wimplicit-function-declaration]
-  111 |   ProgramStart("X, Y to LCD");
-      |   ^~~~~~~~~~~~
-../Core/Src/main.c:112:3: warning: implicit declaration of function 'i2c_init' [-Wimplicit-function-declaration]
-  112 |   i2c_init(&hi2c1);
-      |   ^~~~~~~~
-../Core/Src/main.c:113:3: warning: implicit declaration of function 'i2c_scan' [-Wimplicit-function-declaration]
-  113 |   i2c_scan ();
-      |   ^~~~~~~~
-../Core/Src/main.c:114:3: warning: implicit declaration of function 'lcd_init' [-Wimplicit-function-declaration]
-  114 |   lcd_init();  HAL_Delay(10);
-      |   ^~~~~~~~
-../Core/Src/main.c:128:7: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
-  128 |       sprintf(buffer, "Temp : %-6.1f", tm);
-      |       ^~~~~~~
-../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-   20 | #include "main.h"
-  +++ |+#include <stdio.h>
-   21 | 
-../Core/Src/main.c:128:7: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
-  128 |       sprintf(buffer, "Temp : %-6.1f", tm);
-      |       ^~~~~~~
-../Core/Src/main.c:128:7: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-../Core/Src/main.c:129:7: warning: implicit declaration of function 'lcd_printEx' [-Wimplicit-function-declaration]
-  129 |       lcd_printEx(buffer, 0);
-      |       ^~~~~~~~~~~
-arm-none-eabi-gcc -o "Test005-LCD-Mission.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\user\source\repos\STM32\Test005-LCD-Mission\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test005-LCD-Mission.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Test005-LCD-Mission.elf
- 
 arm-none-eabi-size  Test005-LCD-Mission.elf 
-arm-none-eabi-objdump -h -S Test005-LCD-Mission.elf  > "Test005-LCD-Mission.list"
    text	   data	    bss	    dec	    hex	filename
   41672	    476	   2324	  44472	   adb8	Test005-LCD-Mission.elf
 Finished building: default.size.stdout
  
-Finished building: Test005-LCD-Mission.list
- 
 
-16:50:00 Build Finished. 0 errors, 8 warnings. (took 738ms)
+11:22:44 Build Finished. 0 errors, 0 warnings. (took 359ms)
 

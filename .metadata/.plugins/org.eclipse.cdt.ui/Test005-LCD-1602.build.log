@@ -1,7 +1,7 @@
-13:13:24 **** Incremental Build of configuration Debug for project Test005-LCD-1602 ****
+11:22:43 **** Build of configuration Debug for project Test005-LCD-1602 ****
 make -j24 all 
 make: *** No rule to make target '../Core/Src/lcd1602.c', needed by 'Core/Src/lcd1602.o'.  Stop.
 "make -j24 all" terminated with exit code 2. Build might be incomplete.
 
-13:13:24 Build Failed. 1 errors, 0 warnings. (took 231ms)
+11:22:44 Build Failed. 1 errors, 0 warnings. (took 234ms)
 

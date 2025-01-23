@@ -6,8 +6,16 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="HAL_UART_RxC"/>
 		<list key="findhistory">
+			<item value="HAL_UART_RxC"/>
+			<item value="HAL_UART_Rx"/>
+			<item value="HAL_UART_R"/>
+			<item value="HAL_UART"/>
+			<item value="RxCo"/>
+			<item value="IRQ"/>
+			<item value="HAL_TIM"/>
+			<item value="Trigger"/>
 			<item value="to_string"/>
 			<item value="HAL_ADC_Start (&amp;hadc1);&#x09;&#x09;      //1 time start "/>
 			<item value="while (1)"/>
@@ -15,9 +23,6 @@
 			<item value="  MX_USART2_UART_Init();"/>
 			<item value="int __io_putchar(int ch)&#x09;//lowest output function, 문자 ?��?�� ?�� 받음 그것?�� uart�??? 출력"/>
 			<item value="/*int __io_putchar(int ch)&#x09;//lowest output function, 문자 ?��?�� ?�� 받음 그것?�� uart�??? 출력"/>
-			<item value="EXT15_10"/>
-			<item value="if(check)"/>
-			<item value="HAL_GPIO_WritePIN(LD2_GPIO_Port, LD2_Pin, HIGH);"/>
 		</list>
 		<list key="replacehistory">
 		</list>

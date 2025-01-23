@@ -1,4 +1,4 @@
-13:13:23 **** Incremental Build of configuration Debug for project Test004-ADC-DMA ****
+11:22:43 **** Build of configuration Debug for project Test004-ADC-DMA ****
 make -j24 all 
 arm-none-eabi-size  Test004-ADC-DMA.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  Test004-ADC-DMA.elf
 Finished building: default.size.stdout
  
 
-13:13:23 Build Finished. 0 errors, 0 warnings. (took 287ms)
+11:22:43 Build Finished. 0 errors, 0 warnings. (took 281ms)
 

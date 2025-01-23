@@ -1412,11 +1412,11 @@ double Distance()
   while((HAL_GPIO_ReadPin(Echo_GPIO_Port, Echo_Pin) == 0))
  8001086:	e00a      	b.n	800109e <Distance+0x2e>
     {
-	if(htim2.Instance->CNT >60000) return -1;	//Time Out
+	if(htim2.Instance->CNT >30000) return -1;		//Time Out
  8001088:	4b27      	ldr	r3, [pc, #156]	; (8001128 <Distance+0xb8>)
  800108a:	681b      	ldr	r3, [r3, #0]
  800108c:	6a5b      	ldr	r3, [r3, #36]	; 0x24
- 800108e:	f64e 2260 	movw	r2, #60000	; 0xea60
+ 800108e:	f247 5230 	movw	r2, #30000	; 0x7530
  8001092:	4293      	cmp	r3, r2
  8001094:	d903      	bls.n	800109e <Distance+0x2e>
  8001096:	f04f 0200 	mov.w	r2, #0
@@ -1444,7 +1444,7 @@ double Distance()
  80010c4:	2b01      	cmp	r3, #1
  80010c6:	d0f7      	beq.n	80010b8 <Distance+0x48>
     {
-	if((htim2.Instance->CNT - t1) >60000) return -1;
+	if((htim2.Instance->CNT - t1) >60000) return -1; 	//Time Out
  80010c8:	4b17      	ldr	r3, [pc, #92]	; (8001128 <Distance+0xb8>)
  80010ca:	681b      	ldr	r3, [r3, #0]
  80010cc:	6a5a      	ldr	r2, [r3, #36]	; 0x24

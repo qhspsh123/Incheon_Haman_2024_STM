@@ -1,0 +1,7 @@
+15:25:22 **** Build of configuration Debug for project Test006-uSonicPWM ****
+make -j24 all 
+make: *** No rule to make target 'C:/Users/user/source/repos/STM32/myLib/UltraSonic.c', needed by 'Core/Src/UltraSonic.o'.  Stop.
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+
+15:25:22 Build Failed. 1 errors, 0 warnings. (took 239ms)
+

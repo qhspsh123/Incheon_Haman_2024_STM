@@ -84,12 +84,12 @@ double Distance()
   //wait until Echo High
   while((HAL_GPIO_ReadPin(Echo_GPIO_Port, Echo_Pin) == 0))
     {
-	if(htim2.Instance->CNT >30000) return -1;	//Time Out
+	if(htim2.Instance->CNT >30000) return -1;		//Time Out
     }
   t1 = htim2.Instance->CNT;
   while((HAL_GPIO_ReadPin(Echo_GPIO_Port, Echo_Pin) == 1));
     {
-	if((htim2.Instance->CNT - t1) >60000) return -1;
+	if((htim2.Instance->CNT - t1) >60000) return -1; 	//Time Out
     }
   t2 = htim2.Instance->CNT;
 
